@@ -18,7 +18,7 @@ export default function BlogPage() {
           Artigos sobre reforma, síndicos e bastidores das obras Axus.
         </p>
         <a
-          href={`https://wa.me/${contact.whatsappNumber}`}
+          href={contact.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary mt-8"

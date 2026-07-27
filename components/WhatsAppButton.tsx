@@ -3,9 +3,7 @@ import { contact } from "@/lib/content";
 export default function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-        contact.whatsappMessage
-      )}`}
+      href={contact.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"

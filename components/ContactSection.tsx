@@ -35,9 +35,7 @@ export default function ContactSection() {
               <p>{contact.address}</p>
               <p>CNPJ {contact.cnpj}</p>
               <a
-                href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-                  contact.whatsappMessage
-                )}`}
+                href={contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/70 underline decoration-white/25 underline-offset-4 transition-colors hover:text-cyan"

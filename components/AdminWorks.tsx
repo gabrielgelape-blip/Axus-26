@@ -140,9 +140,7 @@ export default function AdminWorks() {
           className="mt-10 flex justify-center"
         >
           <a
-            href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-              "Olá! Vim pelo site da Axus e quero saber mais sobre obras por administração."
-            )}`}
+            href={contact.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-amber px-7 py-3.5 text-[15px] font-semibold text-navy shadow-[0_12px_32px_rgba(240,180,41,0.35)] transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"

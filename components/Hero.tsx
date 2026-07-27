@@ -63,9 +63,7 @@ export default function Hero() {
           className="mt-10"
         >
           <a
-            href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-              contact.whatsappMessage
-            )}`}
+            href={contact.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary shadow-glass-lg"

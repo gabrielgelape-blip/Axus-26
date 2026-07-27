@@ -61,9 +61,7 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-              contact.whatsappMessage
-            )}`}
+            href={contact.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={`rounded-full px-5 py-2.5 text-[14px] font-semibold transition-transform hover:scale-[1.03] ${
@@ -118,9 +116,7 @@ export default function Header() {
             ))}
             <li>
               <a
-                href={`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-                  contact.whatsappMessage
-                )}`}
+                href={contact.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-1 block rounded-full bg-navy px-5 py-2.5 text-center text-[14px] font-semibold text-white"

@@ -335,8 +335,7 @@ export const about = {
 };
 
 export const contact = {
-  whatsappNumber: "5531900000000", // [VALIDAR COM GABRIEL]
-  whatsappMessage: "Olá! Vim pelo site da Axus Engenharia e gostaria de saber mais.",
+  whatsappUrl: "https://wa.me/message/S4BKMLBWTBVXJ1",
   email: "contato@axusengenharia.com", // [VALIDAR COM GABRIEL]
   address: `${company.city}, ${company.stateAbbr}`,
   cnpj: company.cnpj,

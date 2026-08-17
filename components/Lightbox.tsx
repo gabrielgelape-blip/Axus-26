@@ -3,11 +3,13 @@
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import type { PhotoOrientation } from "@/lib/obras";
 
 export type LightboxItem = {
   title: string;
   category?: string;
   image: string;
+  orientation?: PhotoOrientation;
 };
 
 export default function Lightbox({
@@ -23,6 +25,7 @@ export default function Lightbox({
 }) {
   const open = index !== null;
   const item = open ? items[index] : null;
+  const portrait = item?.orientation === "portrait";
 
   const prev = useCallback(() => {
     if (index === null) return;
@@ -69,15 +72,21 @@ export default function Lightbox({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 12 }}
             transition={{ type: "spring", stiffness: 200, damping: 22 }}
-            className="glass-strong organic-lg relative z-10 w-full max-w-4xl overflow-hidden"
+            className={`glass-strong organic-lg relative z-10 overflow-hidden ${
+              portrait ? "w-full max-w-lg" : "w-full max-w-4xl"
+            }`}
           >
-            <div className="relative aspect-[16/10] w-full">
+            <div
+              className={`relative w-full bg-navy-dark ${
+                portrait ? "aspect-[3/4] max-h-[78vh]" : "aspect-[16/10] max-h-[78vh]"
+              }`}
+            >
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
-                sizes="(max-width: 896px) 100vw, 896px"
-                className="object-cover"
+                sizes={portrait ? "(max-width: 512px) 100vw, 512px" : "(max-width: 896px) 100vw, 896px"}
+                className="object-contain"
               />
             </div>
             <div className="flex items-center justify-between gap-4 p-5 md:p-6">

@@ -15,7 +15,7 @@ export default function PortfolioPage() {
           Obras entregues em Belo Horizonte
         </h1>
         <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink/65">
-          Projetos residenciais e de condomínios — toque para ampliar.
+          Projetos residenciais, de condomínios e institucionais — toque para ver o case.
         </p>
       </div>
 

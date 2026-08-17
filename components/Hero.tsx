@@ -4,22 +4,85 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { hero, contact } from "@/lib/content";
 
+/** Sparse cyan strokes along the inner rooflines (upper X / A legs). Hidden on small screens where object-cover crops those edges. */
+function HeroBlueprintOverlay() {
+  const stroke = {
+    stroke: "#00B8D8",
+    strokeWidth: 1.25,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    vectorEffect: "non-scaling-stroke" as const,
+  };
+
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 z-[1] hidden scale-110 md:block"
+      style={{
+        maskImage:
+          "radial-gradient(ellipse 24% 40% at 50% 48%, transparent 42%, #000 82%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 24% 40% at 50% 48%, transparent 42%, #000 82%)",
+      }}
+    >
+      <svg
+        className="absolute inset-0 h-full w-full"
+        viewBox="0 0 1600 1067"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        aria-hidden
+      >
+        <polyline
+          {...stroke}
+          points="147,30 198,80 250,120 296,160 338,200 389,240 421,280 460,300"
+          opacity="0.28"
+        />
+        <polyline
+          {...stroke}
+          points="1559,85 1488,120 1410,160 1337,200 1273,240 1181,280 1123,310"
+          opacity="0.28"
+        />
+        <line
+          {...stroke}
+          x1="460"
+          y1="300"
+          x2="500"
+          y2="329"
+          opacity="0.2"
+          strokeDasharray="5 7"
+        />
+        <line
+          {...stroke}
+          x1="1123"
+          y1="310"
+          x2="1091"
+          y2="327"
+          opacity="0.2"
+          strokeDasharray="5 7"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export default function Hero() {
   const reduce = useReducedMotion();
 
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden text-white">
       <div className="hero-apple-bg absolute inset-0" />
-      <Image
-        src={hero.image}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover opacity-25 blur-sm scale-110"
-        aria-hidden
-      />
+      <div className="absolute inset-0 scale-110">
+        <Image
+          src={hero.image}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-[0.38]"
+          aria-hidden
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/40 via-navy/50 to-navy-dark/90" />
+      <HeroBlueprintOverlay />
 
       <div className="relative z-10 mx-auto flex w-full max-w-container flex-col items-center px-6 pb-28 pt-32 text-center md:px-8 md:pb-32 md:pt-36">
         <motion.div

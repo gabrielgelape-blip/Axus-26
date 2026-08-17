@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 type VideoPlayerProps = {
   youtubeId?: string;
+  src?: string;
   poster: string;
   title: string;
   className?: string;
@@ -14,25 +15,38 @@ type VideoPlayerProps = {
 
 export default function VideoPlayer({
   youtubeId,
+  src,
   poster,
   title,
   className = "",
-  aspectClass = "aspect-video",
+  aspectClass,
 }: VideoPlayerProps) {
   const [playing, setPlaying] = useState(false);
-  const hasVideo = Boolean(youtubeId);
+  const hasYoutube = Boolean(youtubeId);
+  const hasFile = Boolean(src);
+  const hasVideo = hasYoutube || hasFile;
+  const ratio = aspectClass ?? (hasFile ? "aspect-[3/4] md:aspect-video" : "aspect-video");
 
   return (
     <div
-      className={`organic-lg relative overflow-hidden bg-navy/90 shadow-glass-lg ${aspectClass} ${className}`}
+      className={`organic-lg relative overflow-hidden bg-navy/90 shadow-glass-lg ${ratio} ${className}`}
     >
-      {playing && hasVideo ? (
+      {playing && hasYoutube ? (
         <iframe
           src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="absolute inset-0 h-full w-full border-0"
+        />
+      ) : playing && hasFile ? (
+        <video
+          src={src}
+          title={title}
+          controls
+          autoPlay
+          playsInline
+          className="absolute inset-0 h-full w-full object-contain bg-navy-dark"
         />
       ) : (
         <>

@@ -35,8 +35,7 @@ export const presentationVideo = {
     "Conheça a Axus na voz de Gabriel Gelape — como transformamos projetos em obras transparentes, com engenharia presente em cada decisão.",
   // Cole o ID do YouTube ou a URL do arquivo quando o vídeo estiver pronto
   youtubeId: "",
-  poster:
-    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop",
+  poster: "/obras/telhado-condominio/02.webp",
 };
 
 // [VALIDAR COM GABRIEL]
@@ -109,6 +108,9 @@ export const adminWorks = {
     ],
   },
   cta: "Quero entender como funciona",
+  image: "/obras/area-comum-condominio/01.webp",
+  imageAlt: "Teste de impermeabilização em área comum de condomínio",
+  imageCaption: "Teste de lâmina d’água — etapa técnica visível ao cliente.",
 };
 
 export const process = [
@@ -134,79 +136,7 @@ export const process = [
   },
 ];
 
-// [VALIDAR COM GABRIEL]
-export const portfolioPreview = [
-  {
-    title: "Fachada — Condomínio Residencial",
-    category: "Condomínio",
-    image:
-      "https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
-    title: "Reforma completa de apartamento",
-    category: "Residencial",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
-    title: "Área comum — Condomínio",
-    category: "Condomínio",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
-    title: "Construção residencial do zero",
-    category: "Residencial",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
-    title: "Retrofit de telhado — Condomínio",
-    category: "Condomínio",
-    image:
-      "https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
-    title: "Reforma de cozinha residencial",
-    category: "Residencial",
-    image:
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1400&auto=format&fit=crop",
-  },
-];
-
-export const portfolioAll = [
-  ...portfolioPreview,
-  {
-    title: "Pintura e revitalização de fachada",
-    category: "Condomínio",
-    image:
-      "https://images.unsplash.com/photo-1590986820013-cb87d5305b7c?q=80&w=1400&auto=format&fit=crop",
-  },
-];
-
-// [VALIDAR COM GABRIEL] — stills de bastidores
-export const bastidores = [
-  {
-    title: "Planejamento em campo",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Detalhe de execução",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Equipe na obra",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Acabamento",
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop",
-  },
-];
+export { portfolioPreview, bastidores } from "./obras";
 
 export const testimonials = [
   {

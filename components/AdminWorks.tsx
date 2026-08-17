@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { adminWorks, contact } from "@/lib/content";
 
@@ -26,6 +27,26 @@ export default function AdminWorks() {
             {adminWorks.subtitle}
           </p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-organic-lg md:mt-14"
+        >
+          <div className="relative aspect-[16/10] w-full">
+            <Image
+              src={adminWorks.image}
+              alt={adminWorks.imageAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          </div>
+          <p className="bg-navy/5 px-4 py-3 text-center text-[13px] text-ink/55">
+            {adminWorks.imageCaption}
+          </p>
+        </motion.div>
 
         <div className="mx-auto mt-12 max-w-3xl md:mt-14">
           <div className="mb-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-1 md:gap-5 md:px-4">

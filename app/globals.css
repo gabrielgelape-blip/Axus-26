@@ -49,6 +49,13 @@ select:focus-visible {
     -webkit-backdrop-filter: blur(24px);
   }
 
+  .header-surface {
+    background: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 16px 48px rgba(12, 34, 87, 0.12);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
   .glass-dark {
     background: rgba(12, 34, 87, 0.35);
     border: 1px solid rgba(255, 255, 255, 0.14);

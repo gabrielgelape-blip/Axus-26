@@ -32,8 +32,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        onLight ? "glass-strong border-b border-white/40" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b duration-300 transition-[background-color,border-color,box-shadow,backdrop-filter] ${
+        onLight
+          ? "header-surface border-white/40"
+          : "border-transparent bg-transparent shadow-none backdrop-blur-0"
       }`}
     >
       <div className="mx-auto flex max-w-container items-center justify-between px-5 py-3.5 md:px-8">

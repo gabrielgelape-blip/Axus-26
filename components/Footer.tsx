@@ -23,7 +23,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-5 text-[13px]">
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[13px] md:justify-end">
           <a
             href="https://www.instagram.com/axusengenharia"
             target="_blank"
@@ -40,6 +40,9 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+          <Link href="/backoffice" className="transition-colors hover:text-cyan">
+            Backoffice de obras
+          </Link>
           <Link href="/#contato" className="transition-colors hover:text-cyan">
             Contato
           </Link>
